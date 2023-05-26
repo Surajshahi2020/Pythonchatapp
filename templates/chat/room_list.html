@@ -1,0 +1,19 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<div class="create-form">
+    <script>
+
+        var name = localStorage.getItem("name");
+    
+            var name = prompt("Please enter your name")
+            if (name){
+                localStorage.setItem("name", name )
+            }
+            else{
+                alert("Username is not set")
+            }
+    </script>
+    {% for room in rooms %}
+        <a href="{% url 'room_detail' room_id=room.id %}">{{room.name}}</a><br>
+    {% endfor %}
+</div>

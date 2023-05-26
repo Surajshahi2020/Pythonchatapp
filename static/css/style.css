@@ -1,0 +1,140 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+.message-box {
+  border: 1px solid #ca7373;
+  padding: 10px;
+  background-color: #f1f1f1;
+  margin: 15px;
+}
+
+.fa-phone:before {
+  content: "\f095";
+  margin-left: -114px;
+  font-size: 32px;
+}
+
+.sender {
+  font-weight: bold;
+  color: white;
+}
+
+span.content {
+  margin-left: 0px;
+  color: white;
+}
+
+.timestamp {
+  color: #888;
+  font-size: 12px;
+  color: white;
+}
+
+.success-message {
+  background-color: #a4ebb0;
+  padding: 10px;
+}
+
+.create-form {
+  margin: 9% 32%;
+  background-color: #ccc;
+  padding: 1% 1%;
+  overflow-y: auto;
+  height: 600px;
+  border-radius: 2%;
+  border-bottom-left-radius: 0%;
+}
+
+.create-form .header-content {
+  display: flex;
+}
+
+.name h1 {
+  font-size: 29px;
+  font-family: "Robin Sherr", sans-serif;
+}
+.video-title-container {
+  margin-left: 348px;
+  display: flex;
+  align-items: center;
+  font-size: 29px;
+  font-family: "Robin Sherr", sans-serif;
+}
+
+.video-title-container .audio h3 {
+  padding: 0px 10px;
+}
+
+.video-icon {
+  margin-right: 10px; /* Add margin between the icon and title */
+}
+.create-formed {
+  margin: -9% 32%;
+  background-color: #ccc;
+  padding: 1% 1%;
+  border-radius: 1%;
+}
+.message {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.custom-success {
+  background-color: #dff0d8;
+  color: #3c763d;
+  margin: 2% 25%;
+  padding: 1% 1%;
+}
+
+.custom-error {
+  background-color: #f2dede;
+  color: #a94442;
+  margin: 2% 25%;
+  padding: 1% 1%;
+}
+
+.contentclass {
+  margin-left: -11px;
+}
+
+li.mleft::marker {
+  color: #ccc;
+}
+
+li.mright::marker {
+  color: #ccc;
+}
+
+.big-input {
+  width: 266px;
+  height: 34px;
+  border-radius: 14%;
+}
+
+input.big-input {
+  color: green;
+  width: 198px;
+  background-color: #f5f0f0bd;
+}
+
+li.mleft {
+  max-width: 50%;
+  margin-right: auto;
+  background-color: #48809d;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6%;
+}
+
+li.mright {
+  max-width: 50%;
+  margin-left: auto;
+  background-color: #338b5e;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6%;
+}

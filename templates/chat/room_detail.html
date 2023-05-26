@@ -1,0 +1,65 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+<div class="slider">
+    <div class="create-form">
+        <div class="header-content">
+            <div class="name">
+                <h1>{{ room.name }}</h1>
+            </div>
+            <div class="video-title-container">
+                <i class="fas fa-video video-icon"></i>
+                <h1><i class="fas fa-phone"></i>
+                </h1> 
+            </div>
+        </div>
+        <ul id="ml">
+            
+        </ul>
+    </div>
+</div>
+<div class="create-formed">
+<form id="msg" action="{% url 'send_message' room_id=room.id %}" method="post">
+    {% csrf_token %}
+    <input type="text" name="content" placeholder="Message" class="big-input" />
+    <button type="submit" class="btn btn-success">Send</button>
+</form>  
+</div>
+
+
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+<script>
+    let id =document.getElementById("msg")
+    let username = window.localStorage.getItem("name")
+    var newInput = document.createElement('input');
+    newInput.type = 'hidden';
+    newInput.name = 'name';
+    newInput.value= username;
+    id.appendChild(newInput);
+
+    let ms = {{messages|safe}};
+    document.addEventListener("DOMContentLoaded",()=>{
+        ms.forEach(e=>{
+            $("#ml").append(
+                `
+                <li class="${username === e?.sender ?`mright`:`mleft`}">
+                    <div class="message">
+                        <div class="sender">
+                            <span class="sender">${e?.sender} </span>
+                        </div>
+                        <div class="content">
+                            <span class="content">${e?.content} </span>
+                        </div>
+                        <div class="time">
+                            <span class="timestamp">Posted ${e?.timestamp}</span>
+                        </div>
+                    </div>
+                </li>
+                `
+            )
+        })
+    })
+</script>
+
